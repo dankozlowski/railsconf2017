@@ -1,0 +1,64 @@
+# Relentless persuit of REST
+@derekprior
+http://bikeshed.fm
+
+Let's talk about how REST makes our jobs and code easier, and solves some growing pains.
+Noun, Verb == Resource, Action
+Let's focus on creating _small_ things -- they are the antidote to rails antipatterns
+
+Antipatterns:
+  * Custom actions
+    * noun#verb_noun => user#update_password means we're missing a resource.
+    * So we create a password resource
+    * "That's not worth another controller!"
+      * I've never regretted extracting a controller.  Create new controllers.
+    * Password isn't a model!
+      * Controllers do not need to map 1-1 to AR objects.
+        * Could be shared models, could be PORO
+
+  * Complex actions AKA long methods
+    * Could better be smaller actions across several resources
+    * The problem is differing perspectives: old of just updating a model, to new of having to do some more logic.
+    * Leads to complexity and short actions.
+      * Say we need a featured photo: don't make the xisting Photos conrtoller, create a featured_photos controller witih
+        a service object.
+    * Lesson: be boring: boring model, boring controller, boring object.
+
+  * Ambiguous Language
+    * Eg. Order with route #process.  What the heck does process mean?  Many opinions.
+    * Create a resource Shipment instead of an action process (hint: use create!)
+    * Metz: duplication is better than the wrong absraction
+    * Decouple ideas from one another
+
+  * State machines
+    * Not a bad pattern in themselves, usually bad in rails: usually tons of DSL in a model.
+    * State machines attract complex logic, and old cases aren't removed because no one knows if they're used.
+    * REST!
+      * What if #update didn't exist.  What records would you need to represent state of order?  Create those resources.
+      * Each state transition is its own resource, but they may all touch the same original model.
+      * With an order, you might have resources for authorize_payment, shipped, etc.
+
+Outside-in design things about the service objects and resources: 'what does this application do?'
+
+This is find for CRUD apps, but my app is a snowflake?
+  * What keeps an app from just being CRUD is a lack on imagination.  Be CRUDdy.
+  * Rails is really, really good at CRUD apps, and CRUD is boring.
+  * Design the system from the perspective of the resources.
+
+### QA
+
+Forms?
+  * Break each step of the form in to independent resources.
+
+This isn't worth doing unless you can cover the entire app!
+  * If this is the better pattern, move towards it.
+
+Where did all the complexity of the state machine go?
+  * Move the logic in to a service object that your boring controller can use, like `class Authorization`
+
+How would you handle reordering a list?
+  * Create an album resources that can maintain the positions of a collection of object.
+  * Collections of bjects can be resources themselves.
+
+Where do you put the service objects?
+  * Wherever, lol. (Seriously).
