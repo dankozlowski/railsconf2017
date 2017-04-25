@@ -1,0 +1,31 @@
+Sorting in Ruby
+
+Big Omega (this is the same as big  O, but best case instead of best case == lower bound.
+
+* Bubble sort
+  * Compare 2 elements, swap them if they aren't ascending.  Start over every time until no changes made.
+  * O(set.length^2) == O(N^2) - Average case complexity
+  * Om: n, since best case is an already sorted set, just have to go over set once.
+  * n^2 = more operations, take longer to run
+
+* Insertion Sort
+  * Very efficient at sorting nearly-sorted and small sets
+  * Compare element to all elements on its left, and place before next smallest element.
+  * O(n^2)
+  * Om(n)
+  * Almost always faster than bubble sort
+  * Sometimes used as a finisher sort to quicksort
+  * Good at few unique and nearly sorted set
+
+Quicksort
+  * Choose a pivot point, either a random, first, last, or middle ele.
+  * "stable sorting algorigthm" == equal values will remain in initial ordering state.
+  * O(n^2), although likely unable to take this amount of time.  For this to take as long, you would have to pick the highest
+    or loweest element in the set for the pivot on every iteration.  This is why you don't want to pick first or last because
+    they could be n^2.
+  * Om(n log n), several proofs that show quicksort runs in linearithmic (n log n).
+  * Very bad for few unique set
+  * This is what ruby uses
+
+Resources:
+  * Toral/developers/sorting-algorightms
