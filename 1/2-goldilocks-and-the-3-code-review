@@ -6,4 +6,64 @@ Modern-day Goldilocks is a Railsdev learning to code review
 Method: one person gives the :+1:
   * devolves in to conversations around syntax or hash rockets
   * large pull requests are not well-reviewed and can lead to production issues
-  * 
+
+Goals:
+  * Catch problems at lowest-value stage
+  * Code-reviews as a quality gates
+  * Get more eyes on it: lower bus factor, fewer bugs that get through, faster correction cycles (many people know code)
+
+Types of code reviews: (McConnel)
+  * Inspections
+    * Intense CR process around defect detection, not defect correction.  If you correct as you read, you can miss the defects.
+    * Mave a list of what you're looking for, and roles for reviewers.
+    * Take any data (working, not working) and work in to longer CR process.
+    * Caught 60% on average of defects, and fewer defects created.
+
+  * Short Reviews
+    * Even 1 line of code should be reviewed.
+    * Many bugs are introduced in the smallest changes (went from 92% good to 99%)
+
+  * Walkthrough (working meetings)
+    * Working meeting with junior and senior developer working together.
+    * Senior points out where application could go wrong
+    * Junior asks questions and plays devils advocate.
+
+Weird data:
+  * Most people have to ask for a peer review
+  * Most people think peer reviews make them better developers
+  * Code review is language agnostic, but team specific
+  * Most people only need 1 person to review code before it can be merged
+  * People spend on average 5-20m to review a PR, but sometimes had to wait days for their code to be reviewed.
+  * Most people not thrilled with the way their PRs are being reviewed.
+  * Some people just rubber stamp reviews, some people rubber stamp after one approval.
+
+What makes a good CR?
+  * Energy
+    * Who is doing review, and how much time are they spending on it?  How much weight does reviewer carry?
+    * All should review equally: seniors need the feedback, and juniors can get torn to parts with nit-picky reviews.
+    * Big, commit, large PR, no context?  Bad CR experience.
+    * Unequal reviews from juniors can lead to burn out and hurt feelings.
+    * Code reviews should be first class citizens.
+
+  * Substance
+    * What are is the reviewer doing and saying while they're reviewing?
+    * Over 5% of people associate the word nit-pick with their CR process.
+    * "You should review the code, not the person.  Use tools to make style decisions"
+    * Tons of nit comments should be pulled in to RL to a conversation
+    * Focus on content and semantics, not style and syntax.
+    * Be empathetic, not egotistical
+
+CR best practices
+  * Review everyone
+  * Concise comments with context (screen shots, etc.)
+  * Empathy without ego (be kind)
+  * Use linters and templates (make it easy)
+  * Iterate on CR processes
+
+"I love code reviews in theory.  In practice, they are only as good as the group responsible for conucting them in the correct
+manner."
+
+Resources:
+Peer reviews in Software: a practical guide
+Code Complete 2 (around code review)
+
