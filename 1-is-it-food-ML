@@ -1,0 +1,58 @@
+# Is it food?  Intro to ML
+
+We can identify photos of food through pattern recognition
+* Interesting to automate because humans can recall info piecemeal and assemble it
+* Much harder to do as a machine.
+
+Types of kearning
+* Unsupervised
+  * clustering of information in to buckets, computer decides what it is.  What is this sample closest to?
+* Supervised learning
+  * Provide all information up front with definiteion, machine uses those examples to understand new stimuli
+* Reinforncement
+  * on each guess, we tell the computer if it's right.
+
+Neural networks
+* Started in 1967, nothing reallu usefu unt tensor flow
+
+Tensor flow
+* way of describing networks as a data flow graph
+* takes in a tensor and returns an operated upon tesnor
+* tensor == an n-dimenional array of information
+* Inception == prebuilt graph useful for working with image net images
+
+INtegration ML with Rails
+* Tensorflow.rb -- couldn't get it running, Docker also didn't work
+
+How did he get it working?
+* Install python, create virtualenv, install tensor flow
+* Python is the best tooling right now
+
+Retraining: Transfer learning == if we look at dataflow graph from inception, we can replace last step with our own data.
+* Collect a bunch of data, and decide on the categories.
+* category selection is crucial: if you've only ever seen food, you've only see food.  Have other categories to comprare again
+  * For example, we dont' want photos of people or text
+  * 1-2k images for food
+* Tensor flow only needs images 299px by 299px
+* Retrained with existing TF script
+  * Bottleneck file == informal term for the results of the previos TF layer.  Bult and cached for reuse
+  * Data is split in to three parts: training, testing, valudation
+  * cross-entroy = loss metric
+* Tests are kept separate from training so that we don' just see things we've already processed.
+
+Results:
+* Graph == encoded thing from outcome of previous step
+* Labels == category for final output (food, animal, text, etc)  Used to look up final value
+
+Once retrained, we want to be able to label image.  Will return a alue for each category for likely match.
+* you're never going to get 100% of gfood unless you have bad categories.  You don't want perfect accuracy.
+
+Make it a web server
+* Use flask to create a service in Python that Rails can hit
+
+Lessons
+* Know what you're trying to do, and use the correct tooling whhen learning (AKA Python)
+
+Resources:
+* demystifying deep neural nets - Rosie Campbell
+* Python machine learning - Sabastian
