@@ -1,0 +1,32 @@
+# NLP for Rubyists
+Aja Hammerly
+@the_thagomizer / thahomizer.com / github / thagomizer
+
+NLP can be used to create better UX.
+Bad NLP: Computer, earl gray, hot.  Very explicit to what we're telling hte machine to do
+Good NLP: Accessibilty (kids who can't read prefer to speak), moms holding a baby
+Can help us understand very loarge bodies of data, like feedback forms.  And stop us form sending reall angry emails :P
+
+Why is NLP hard?
+* Human languages are horrible.  Super ambiguous, irregular verbs, idioms.
+* No formal closed computation grammar.
+* Humans are very inprecise (I'm starving, you look freezing)
+* Computers suck at sarcasm (Sure, I'd _love_ to do the dishes)
+* because humans use language in weird ways, and language is constantly evolving
+
+Why is NLP hard?  Humans.
+
+Turing: if the judge can't tell who is the machine and who is the human, the machine passes.
+People in NLP usually don't make their own models -- tons of pretrained models exist
+Using Cloud Natural Language API
+
+Gems
+* google-cloud language
+* graph
+
+Resources:
+Google natural language API is free, first 5k requests a month are free
+Leibniz and Descartes
+Chomsky: formal closed grammar
+STEFAN SOLVES YOUR PROBLEM
+ELIZA
