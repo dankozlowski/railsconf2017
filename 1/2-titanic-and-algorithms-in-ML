@@ -1,0 +1,39 @@
+# Predicting Titanci survivors with ML
+
+Live coding example of ML algorithms in Python using the dataset from the Titanic passenger manifest.
+
+Libs used:
+* Pandas
+* matplotlib.pyplot
+* sklearn: linear_model, preprocessing, tree + model_selection
+
+Looking for links
+* Created several graphs comparing various datapoints to survival rate.
+* Determine correlations in order to create heuristic for ML.
+
+First heuristic:
+* Women survive, men die
+  * Compare this heuristic against actual survival data.
+  * 78% correct!  Better than a coin flip :P
+* It would be better if the computer could find these patterns for us...
+
+A feature is a essentially a vector of comparison
+* Tell agorithm "these are all these inputs (feature) and one output (target)"
+* Classifier (sklearn) uses linear regression that can give score of features against target
+  * 79% correct
+* Can also use preprocessing to map features to a polynomail model
+  * 80% correct
+* Adding more available feaures
+  * 83% correct!  All in less than 20 lines of code.
+
+Decision trees
+* For each row, we can ask a series of questions to further classify.
+* Tree is 98% accurrate!  That means there's something wrong.
+* "Overfitting" - trying to match all data points
+* Use model_selection to hide some information from classifier (cross_val_score)
+  * gives us an average of all scores, comes out closer to 78%
+  * We can make the algorithm more broard by restricting the number of branches, and the size of the bucket
+    required for a new branch.
+    * this comes out closer to 83.5%
+* We can inspect the tree to a graph to view it, and we can see how the algorith decided to do this -- basically all the 
+  work we did by hand at the beginning of the talk

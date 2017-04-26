@@ -1,0 +1,35 @@
+# Bayes is Bae
+
+"We have the power to predict the future.  The bad news is that we're really bad at it"
+
+Thomas Bayes was born in 1701, statician and minister.  Produced paper on Bayes method that was published after his death.
+
+Bayes: if we draw 100 tickets and 10 of them are winners, what does that say about the future possibility of drawin a
+winner?  What if we have one sample?  We can take two probabiity distrocutions that are related, and even if our
+preduction is wrong, it's better than no prediction at all.
+
+AI
+* Given bayes rule, we can use the prediction to determine where the robot is.
+* Predict what we need to do to move robot
+* what happens when our prediction of position and our measurement disagree?
+* Convolute (comine) the two
+* Kalman Filter!  We can see much better pathing for the chaser robot
+
+Bayes Rule
+* Coin test
+* Produces same outcome as a logic tree
+* Probability of getting the bad coin will never reach 0, bayes can't get there.
+
+Kalman Filter
+* This is easy to look up online
+* A way to de-noise sensor readings to find better fit lines.
+
+Resources:
+AI for Robotics by Georgia Tech
+Kahn academy on Bayes rule
+Work of Simon Levy
+Algorithms to live by
+The signal and the noise
+
+bit.ly/klaman_tutorial
+bit.ly/klaman_notebook
