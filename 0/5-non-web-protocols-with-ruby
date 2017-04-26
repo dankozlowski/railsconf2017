@@ -1,0 +1,4 @@
+# Using non-web protocals with Ruby
+
+This talk was mostly insubstantive: there was a brief demo of setting up a TCP socket connection in Ruby, and then a bunch
+of implementation specific stuff around using Zebra printers.

@@ -1,0 +1,56 @@
+# What comes after SOLID?
+
+Translating "have to" to "choose to"
+  * I choose to ____ because I want ____.
+
+Why do we choose to write good code?  Because I want _____???
+  * Is good code the same as quality software?
+
+The powers that be: "AGILE is broken", so we wrote the AGILE manifesto.
+Grim reality: it didn't work.  The manifesto didn't uite do it.
+Agile is something developers do to keep businesspeople happy (usually looks like SCRUM)
+  * SCRUM only addresses about 50% of AGILE, and missed out on most of the values.
+  * AFramework in which you can be agile, but not AGILE.
+
+We don't need more processes, we need more trust.
+To solve this, we need to learn to communicate.
+
+Goal for today: common language to express needs for both developers and businesspeople.
+AKA Why do we write good code? To create value.
+
+Controversial statement 1: our job isn't to write code, it's to solve problems.
+Create value: generate revenue, lower costs, reduce risks
+
+Why do we write good code?  To create value.  Not the same as quality software.
+
+Contraversion statement 2: software quality is defined by the value it provides.
+
+Software quality is three things (USA):
+  * Usefulness
+    * Question: Does it solve the problem effectively?
+    * Target: Users
+      * Is this a problem that affects users?
+      * Is this a solution to their problem, and does it solve it in a way that works for them?
+  * Sustainability
+    * Question: can we keep building without unnecssary obstacles.
+    * Target: Software
+      * Is it resistant to cahnge?
+        * will we unstand what it does later?
+        * Does it resist new functionality?
+    * Target: Development team
+  * Accuracy
+    * Question: Does it work the way we think it does
+    * Target: Ourselves
+      * Have we developed our understanding of the problem?
+      * Have we developed an understanding of the code?
+      * Is there cofnitiva overload preventing understanding?
+      * Are we confident that the code reflects our current understanding?
+
+Why do I write good code?  I want USA software.
+
+Author then goes on to explain how TRUE, SOLID, and testing all fall in to the concerns of USA.
+Complexity metrics: low cyclomatic complexity, low connascence (things that have to change in tandem)
+Team-oriented pratices: organization conventions, style guides, bus factor, code review, pairing/mob, docs, mentorship
+
+This talk has incredibly verbose and complex slides so these notes only cover the first half.
+Set available here

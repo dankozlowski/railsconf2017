@@ -1,0 +1,4 @@
+# Speech recognition in Ruby
+
+This talk was about using JS to talk to the webkit speech API, only available in Chrome 11.  They showed boilerplate
+code for setting the API up.
