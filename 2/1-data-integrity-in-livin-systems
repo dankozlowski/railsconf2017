@@ -1,0 +1,35 @@
+# Data integrity in living systems
+Betsy Haibel - @betsythemuffin
+
+Usual causes of loss of data integrity
+* production changes
+  * scope data by future usecases
+  * validate operations, not just table rows
+  * callobotare with user to correct messed up data
+* miscomm
+  * Team losing strong form of communication can lead quickly to integrity issues
+  * Understand how your product is being used
+  * Use validations to communicate expectations
+* Not using validations or other well knnw integrity paatterns
+  * There is no one true schema
+    * People should not be stopped by validation bugs -- they'll jsut enter fake data
+    * Stay away from custosm validation contexts and service-level validations
+  * Create some custome class like ValidationService to wrap all DB methods in transaction blocks
+  * Don't forget CAP!
+    * Safety vs. Liveness
+  Fix it!
+    * Audit processes
+      * Run lightweigh tconsistenty checks in the background, escalate to humans when issues found
+    * Don't bother checking nil -- better to raise
+
+Takehomes:
+* Reduces cognitive load around development and product use
+* Strong product understanding
+* Good communication patterns (She wasn't too clear here)
+* Active pactives around data checking
+* Collaborate to resolve data issues with users and other devs
+
+Resources:
+Author: Coda Hale around CAP
+
+

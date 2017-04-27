@@ -1,0 +1,35 @@
+# Deomain driven design
+
+Beautiful systems
+* What are the defficult design decisions that are likely to change?
+  * Within the business groups that user them!
+
+How do we get out of the world on the monolith?
+  * Microservices sound hard!
+  * How much should we plan to extract?
+  * What if my level of extraction is too high or too low?
+  * IF ONLY THERE WEREW A WAY TO VISUALIZE THIS STUFF
+
+"INtroducing domain-driven design"
+  * Activity from DDD: A context map.
+  * Refactoring patterns we can use to incrementall refacot system
+
+Ubiquitous language: set of shared conecpts terms, and efinitions between stakeholdres and technical staff
+  * Develop a glossary: nouns (concepts), verbs (actions) with everyone in the same room
+  * Rename concepts in code to follow the new glossary
+
+Visualize your system
+* ERD: railsroady or rails-ERD
+
+Supporting domains: areas of business that make the core domain happen (reporting, finances, etc)
+
+Boundaries
+  Classes
+  Modeules
+  Gems
+  Enginers
+  App
+  APIs
+
+Bounded contexts allow us to have overloaded terms that are seprated by context.
+Draw out application with upstream and downstream indications
