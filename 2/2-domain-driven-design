@@ -33,3 +33,23 @@ Boundaries
 
 Bounded contexts allow us to have overloaded terms that are seprated by context.
 Draw out application with upstream and downstream indications
+Break application into domain modules
+
+Aggregate roots:
+  * Helps avoid the AR GOD OBJECT
+  * Only expose object graph oh related entittes beneath them
+
+Note: a fair emount of this talk is design-specific for this application.
+
+Advanced topics:
+* Sharing entties between contexts
+  * Shared kernel - namespace shared models ina  common module or namespace or gem!
+    * user -> common::user
+  * model that needs to exist in two domains?
+    * anti-corrouption layer - adatper that maps an outside concentp in to the current domain
+
+This talk should have been called 'how to write your rails app like a java project'
+
+Resources:
+Gem: Whisper
+
