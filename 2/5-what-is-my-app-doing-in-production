@@ -1,0 +1,43 @@
+# What's my app doing in production?
+Daniel Azuma
+
+LSE takewaays:
+* Measure _everything_
+
+Subscribe to activesupport::notiiactions.subscribe &block
+Rails instruments many things, just need to subscribe -- can also call instrument on our own code
+
+How to measure cache?
+* measure cache hit rate
+* isolate actions of interest
+  * notiications are shared across threads
+  * thread_mattr_accessor == per-thread global
+* Correctlate hit rate with latency measurements (IS IT WORKING???)
+
+Other instrumentation APIs
+* ActinController filters (this can also be a rack middleware)
+* Tracepoint
+
+Safety
+* Tips for resucaing latency
+  * isolate cases of interest
+  * Re-evaluation existing instrumentation - some should be around forever, others don't need to be
+    * leaving them around too long will slow us down (like tests)
+  * Sample your data!  Somtimes you can get away with only checking every 1 in a tousand
+  * Use tracepoint sparingly (can be very, very heavy)
+    * It's global by default -- applies to all threads
+    * Alternative treacepoint is available as a C API that isn't global.
+  * Report async
+  * Avoid side-effects
+    * Be aware that instrumentation can effect existing code
+
+What should you measure?
+* What are you applications indicators (like the heart, what shows us the system is unhealthy)?
+  * Results: responses (payload, size), error reats
+  * Internal proesses: intermediate results, rendering (tey found JSON serialization was taking forever, eg)
+  * External interfaces (database, APIs, cache)
+  * Errors and exceptions (don't throw ANY errors away, including expected errors and retries)
+
+Start measuring!
+
+
