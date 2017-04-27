@@ -1,0 +1,30 @@
+# Exceptions
+#bradurani
+
+NOTE: This talk was given so fast I'm having trouble taking notes.
+
+Don't rescue just cause you can -- it's okay to fail.
+
+When we swallow exceptions, we don't see them in the log.
+
+Create a generic error for your app that:
+  * Log the error
+  * Send it to reporting
+  * Metadata for better log filtering
+
+Custom error classes and hierarchy
+  * Very useful in apps with very deep call stacks
+  * Error classes can make a lot more sense that the actual stack
+  * Errors should have a user-facing message and a developer facing message
+  * Errors can be used to indicate at which part f the user process the request failed, so we can respond accordingly
+
+Use rescue_from in the top of controllers, action agnostic controller rescues!
+Use inheritance to do things like user_messages.  Abstract classes are your friend
+Initializers on errors can add context to the reporting.
+Inhertances errors could implement an #add_metadata method.
+
+You can rescue and continue, like returning a default vakue on a rescue!
+
+RULES:
+Do not swallow errors
+Don't do custom errors unless you need to
